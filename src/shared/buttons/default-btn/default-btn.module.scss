@@ -1,0 +1,6 @@
+@use '@/assets/styles/abstracts/placeholders';
+
+.button {
+  padding: 5px 20px;
+  @extend %text-size-medium;
+}
