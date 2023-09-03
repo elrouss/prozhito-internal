@@ -1,0 +1,31 @@
+@use './variables/fonts';
+
+%heading-size-large {
+  font-size: fonts.$size-heading-1;
+  font-weight: 700;
+  line-height: fonts.$line-height-heading-1;
+}
+
+%heading-size-medium {
+  font-size: fonts.$size-heading-2;
+  font-weight: 700;
+  line-height: fonts.$line-height-heading-2;
+}
+
+%heading-size-small {
+  font-size: fonts.$size-heading-3;
+  font-weight: 600;
+  line-height: fonts.$line-height-heading-3;
+  letter-spacing: fonts.$letter-spacing-main;
+}
+
+%text-size-large {
+  font-size: fonts.$size-text-large;
+  line-height: fonts.$line-height-text-large;
+}
+
+%text-size-medium {
+  font-size: fonts.$size-text-medium;
+  line-height: fonts.$line-height-text-medium;
+  letter-spacing: fonts.$letter-spacing-main;
+}

@@ -1,0 +1,13 @@
+$size-heading-1: 5.6rem;
+$size-heading-2: 3.9rem;
+$size-heading-3: 2.4rem;
+$size-text-large: 2.2rem;
+$size-text-medium: 1.8rem;
+
+$line-height-heading-1: calc(7.2rem / $size-heading-1 * 100%);
+$line-height-heading-2: calc(4.4rem / $size-heading-2 * 100%);
+$line-height-heading-3: calc(3.2rem / $size-heading-3 * 100%);
+$line-height-text-large: calc(2.8rem / $size-text-large * 100%);
+$line-height-text-medium: calc(2.4rem / $size-text-medium * 100%);
+
+$letter-spacing-main: 0.4px;
