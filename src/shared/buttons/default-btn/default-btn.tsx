@@ -15,11 +15,13 @@ export const DefaultButton = ({
   type = 'button',
   disabled = false,
   isLoading = false,
+  onClick,
 }: IDefaultButtonProps) => (
   <button
     className={clsx(styles.button, { [styles.load]: isLoading })}
     type={type}
     disabled={disabled}
+    onClick={onClick}
   >
     {label}
   </button>

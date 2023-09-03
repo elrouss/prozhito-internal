@@ -6,11 +6,14 @@ import { regexEmail, regexPassword } from '@/utils/regex';
 import styles from './sign-in-form.module.scss';
 
 export const SignInForm = () => {
-  const { data, handleData, isFormValid, setIsFormValid } = useFormData();
+  const { data, setData, handleData, isFormValid, setIsFormValid } =
+    useFormData();
+
+  useEffect(() => setData({ email: '', password: '' }), []);
 
   useEffect(() => {
     setIsFormValid(
-      regexEmail.test(data?.email) && regexPassword.test(data?.password),
+      regexEmail.test(data.email) && regexPassword.test(data.password),
     );
   }, [data]);
 
@@ -32,14 +35,14 @@ export const SignInForm = () => {
           type="email"
           label="Email"
           name="email"
-          value={data?.email}
+          value={data.email}
           autoComplete="on"
           onChange={handleData}
         />
         <Input
           type="password"
           name="password"
-          value={data?.password}
+          value={data.password}
           label="Пароль"
           onChange={handleData}
         />

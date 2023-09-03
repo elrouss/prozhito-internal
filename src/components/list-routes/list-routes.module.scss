@@ -1,0 +1,9 @@
+@use '@/assets/styles/abstracts/variables/wrappers';
+@use '@/assets/styles/abstracts/placeholders';
+
+.list {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  @extend %text-size-large;
+}

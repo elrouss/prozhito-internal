@@ -1,0 +1,14 @@
+@use '@/assets/styles/abstracts/variables/wrappers';
+@use '@/assets/styles/abstracts/placeholders';
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  max-width: wrappers.$main-desktop;
+  margin: 0 auto;
+  padding-bottom: 10px;
+}
+
+.date {
+  @extend %heading-size-small;
+}

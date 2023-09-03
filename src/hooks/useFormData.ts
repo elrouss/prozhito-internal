@@ -11,5 +11,5 @@ export const useFormData = () => {
     });
   };
 
-  return { data, handleData, isFormValid, setIsFormValid };
+  return { data, setData, handleData, isFormValid, setIsFormValid };
 };
