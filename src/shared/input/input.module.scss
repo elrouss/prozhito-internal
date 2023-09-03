@@ -1,0 +1,9 @@
+@use '@/assets/styles/abstracts/variables/colors';
+@use '@/assets/styles/abstracts/placeholders';
+
+.wrapper {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  @extend %text-size-medium;
+}

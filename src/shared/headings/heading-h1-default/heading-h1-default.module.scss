@@ -1,0 +1,6 @@
+@use '@/assets/styles/abstracts/variables/colors';
+@use '@/assets/styles/abstracts/placeholders';
+
+.heading {
+  @extend %heading-size-medium;
+}
