@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { Inter } from 'next/font/google';
-// import { useSession } from 'next-auth/react';
-import { useState } from 'react';
+import { useSession, signOut } from 'next-auth/react';
+import { useState, useEffect } from 'react';
 import { Header } from '@/shared/header/header';
 import { ListRoutes } from '@/components/list-routes/list-routes';
 import { HeadingH1Default } from '@/shared/headings/heading-h1-default/ heading-h1-default';
@@ -13,10 +13,14 @@ import styles from './index.module.scss';
 const inter = Inter({ subsets: ['latin'] });
 
 const HomePage = () => {
-  // const { data: session } = useSession();
+  const { data } = useSession();
   const [isFormVisible, setIsFormVisible] = useState(false);
 
-  // console.log(session)
+  useEffect(() => {
+    if (!data) return;
+
+    setIsFormVisible(false);
+  }, [data]);
 
   return (
     <>
@@ -29,16 +33,18 @@ const HomePage = () => {
       <Header />
       <main className={`${styles.main} ${inter.className}`}>
         <div className={styles.wrapper}>
-          <ListRoutes extraClass={styles.routes} />
+          <ListRoutes extraClass={styles.routes} isAuth={!!data} />
           <div className={styles.entry}>
             {isFormVisible ? (
               <SignInForm />
             ) : (
               <>
-                <HeadingH1Default label="Привет!" />
+                <HeadingH1Default
+                  label={`Привет${data ? `, ${data.user!.name}` : ''}!`}
+                />
                 <DefaultButton
-                  label="Войти"
-                  onClick={() => setIsFormVisible(true)}
+                  label={data ? 'Выйти' : 'Войти'}
+                  onClick={() => (data ? signOut() : setIsFormVisible(true))}
                 />
               </>
             )}
