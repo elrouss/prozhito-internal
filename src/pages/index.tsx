@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { Inter } from 'next/font/google';
+// import { useSession } from 'next-auth/react';
 import { useState } from 'react';
 import { Header } from '@/shared/header/header';
 import { ListRoutes } from '@/components/list-routes/list-routes';
@@ -12,7 +13,10 @@ import styles from './index.module.scss';
 const inter = Inter({ subsets: ['latin'] });
 
 const HomePage = () => {
+  // const { data: session } = useSession();
   const [isFormVisible, setIsFormVisible] = useState(false);
+
+  // console.log(session)
 
   return (
     <>
