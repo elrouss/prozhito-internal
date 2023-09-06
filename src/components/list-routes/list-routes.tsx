@@ -1,30 +1,22 @@
 import Link from 'next/link';
+import { nanoid } from 'nanoid';
 import clsx from 'clsx';
 import routes from '@/utils/routes';
 import styles from './list-routes.module.scss';
 
 interface IListRoutesProps {
   extraClass: string;
-  isAuth: boolean;
+  links: { name: string; link: string }[];
 }
 
-export const ListRoutes = ({ extraClass, isAuth }: IListRoutesProps) => (
+export const ListRoutes = ({ extraClass, links }: IListRoutesProps) => (
   <nav className={clsx(styles.nav, extraClass)}>
     <ul className={styles.list}>
-      <li>
-        <Link href={`${routes.base}${routes.endpoints.public}`}>public</Link>
-      </li>
-      <li>
-        {isAuth ? (
-          <Link href={`${routes.base}${routes.endpoints.internalOnly}`}>
-            internal-only
-          </Link>
-        ) : (
-          <Link href={`${routes.base}${routes.endpoints.publicOnly}`}>
-            public-only
-          </Link>
-        )}
-      </li>
+      {links.map(({ name, link }) => (
+        <li key={nanoid()}>
+          <Link href={`${routes.base}${link}`}>{name}</Link>
+        </li>
+      ))}
     </ul>
   </nav>
 );
