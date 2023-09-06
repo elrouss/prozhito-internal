@@ -1,7 +1,8 @@
 import { useRouter } from 'next/router';
+import Error from 'next/error';
 import { Slug } from '@/components/slug/slug';
 
-const SlugPage = () => {
+export const SlugPage = () => {
   const router = useRouter();
   const { slug } = router.query;
 
@@ -12,11 +13,11 @@ const SlugPage = () => {
       case 2:
         return <Slug category={slug[0]} page={slug[1]} />;
       default:
-        return <h1>Недопустимый адрес</h1>;
+        return <Error statusCode={404} />;
     }
   }
 
-  return <h1>Недопустимый адрес</h1>;
+  return <Error statusCode={404} />;
 };
 
 export default SlugPage;
