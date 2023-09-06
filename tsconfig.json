@@ -22,7 +22,7 @@
     "**/*.ts",
     "**/*.tsx",
     "next.config.js",
-    "src/pages/api/auth/[...nextauth].js",
+    "src/pages/api/auth/[...nextauth].ts",
     "src/middleware.ts"
   ],
   "exclude": ["node_modules"]
