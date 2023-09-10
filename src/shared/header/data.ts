@@ -1,14 +1,14 @@
 export const navLinks = [
   {
     name: 'auth',
-    href: 'https://auth.domain.com',
+    href: 'http://auth.elrouss.com',
   },
   {
     name: 'internal',
-    href: 'https://internal.domain.com',
+    href: 'http://internal.elrouss.com',
   },
   {
     name: 'public',
-    href: 'https://public.domain.com',
+    href: 'http://public.elrouss.com',
   },
 ];
